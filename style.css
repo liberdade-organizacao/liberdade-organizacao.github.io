@@ -1,0 +1,160 @@
+@import url( 'https://fonts.googleapis.com/css?family=Pacifico');
+@import url( 'https://fonts.googleapis.com/css?family=Nunito');
+body {
+color: #090909;
+background-color: #dfe5e6;
+font-family: 'Nunito', sans-serif;
+}
+h2,
+h3 {
+font-weight: 600;
+font-size: 1.5em;
+font-family: 'Pacifico', cursive;
+}
+p {
+line-height: 1.6em;
+}
+i.fa {
+color: #F18F01;
+}
+i.fo {
+color: #dfe5e6;
+}
+a:hover,
+a:link,
+a:visited {
+color: #090909;
+text-decoration-style: solid;
+text-decoration-color: #F18F01;
+}
+hr {
+border-color: #F18F01;
+}
+.l-content {
+margin: 0 auto;
+}
+.l-box {
+padding: 0.5em 2em;
+}
+.pure-menu {
+box-shadow: 0 1px 1px rgba(0,0,0, 0.10);
+}
+.pure-menu-link {
+padding: 0.5em 0.7em;
+}
+.pure-menu-heading {
+font-family: 'Pacifico', cursive;
+text-transform: capitalize !important;
+}
+.banner {
+background: url("https://raw.githubusercontent.com/liberdade-organizacao/tumblr/master/src/pde/bg/bg.png") repeat;
+background-color: #F18F01;
+text-align: center;
+height: 200px;
+width: 100%;
+margin-bottom: 3em;
+display: table;
+}
+.banner-head {
+vertical-align: middle;
+font-size: 2em;
+color: #dfe5e6;
+font-weight: 500;
+font-family: 'Pacifico', cursive;
+background-color: #090909;
+margin-top: 15%;
+margin-left: 25%;
+margin-right: 25%;
+}
+.information,
+.pricing-tables {
+max-width: 980px;
+margin: 0 auto;
+}
+.pricing-tables {
+margin-bottom: 3.125em;
+text-align: center;
+}
+.pricing-table {
+border: 1px solid #ddd;
+margin: 0 0.5em 2em;
+padding: 0 0 3em;
+}
+.pricing-table-free .pricing-table-header {
+background: #F18F01;
+}
+.pricing-table-biz .pricing-table-header {
+background: #F18F01;
+}
+.pricing-table-header {
+background: #111;
+color: #dfe5e6;
+}
+.pricing-table-header h2 {
+margin: 0;
+padding-top: 2em;
+font-size: 1em;
+font-weight: normal;
+}
+.pricing-table-price {
+font-size: 4em;
+margin: 0.2em 0 0;
+font-weight: 100;
+}
+.pricing-table-price span {
+display: block;
+text-transform: uppercase;
+font-size: 0.2em;
+padding-bottom: 2em;
+font-weight: 400;
+}
+.pricing-table-list {
+list-style-type: none;
+margin: 0;
+padding: 0;
+text-align: center;
+}
+.pricing-table-list li {
+padding: 0.8em 0;
+background: #f7f7f7;
+border-bottom: 1px solid #e7e7e7;
+}
+.button-choose {
+border: 0;
+background: #fff;
+border-radius: 2em;
+font-weight: bold;
+position: relative;
+bottom: -1.5em;
+}
+.information-head {
+font-weight: 500;
+}
+.footer {
+background: #111;
+color: #dfe5e6;
+text-align: center;
+}
+.pure-button-primary {
+background-color: #F18F01;
+}
+@media(min-width: 767px) {
+.banner-head {
+font-size: 4em;
+}
+.pricing-table {
+margin-bottom: 0;
+}
+}
+@media (min-width: 480px) {
+.banner {
+height: 400px;
+}
+.banner-head {
+font-size: 3em;
+}
+}
+
+table {
+.pure-table;
+}
