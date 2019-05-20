@@ -1,47 +1,58 @@
-function main() {
+function draw(posts) {
+    // checking for errors
+    if (posts.error !== undefined) {
+        alert(posts.error);
+        return;
+    }
+
+    // drawing posts
+    var outlet = "";
+
+    for (var i = 0; i < posts.length; i++) {
+        var post = posts[i];
+        var url = `/post.html?link=`+encodeURI(post.link)+`&title=`+encodeURI(post.title);
+        // TODO implement post page
+        outlet += `
+            <div class="l-box">
+                <h3 class="information-head">
+                    <a href="`+url+`">
+                        `+post.title+`
+                    </a>
+                </h3>
+                `+post.description+`
+            </div>
+            <hr>
+        `;
+    }
+
+    document.getElementById('posts').innerHTML = outlet;
+}
+
+function get(url, callback) {
     var request = new XMLHttpRequest();
-    var url = "http://api.tumblr.com/v2/blog/liberdadeorganizacao.tumblr.com/posts/text?api_key=???&limit=6"
     request.open('GET', url, true);
 
     request.onload = function() {
         if (request.status >= 200 && request.status < 400) {
-            // drawing posts
-            var posts = document.getElementById('posts');
             var data = JSON.parse(request.responseText);
-            var html = ``;
-            for (var i = 0; i < 5; i++) {
-                var rawPost = data.response.posts[i];
-                var id = rawPost.id.toString();
-                var title = rawPost.title;
-                var body = rawPost.body;
-                var post = `
-                    <div class="l-box">
-                        <h3 class="information-head">
-                            <a href="/post.html?id=`+id+`">
-                                `+title+`
-                            </a>
-                        </h3>
-                        `+body+`
-                    </div>
-                    <hr>
-                `;
-                html += post;
-            }
-            posts.innerHTML = html;
-
-            // TODO draw arrows
+            callback(data);
         } else {
-            // We reached our target server, but it returned an error
-            alert("Couldn't load blog pots");
+            callback({error: "Cuma?"});
         }
     };
 
     request.onerror = function() {
         // There was a connection error of some sort
-        alert("Couldn't load blog pots");
+        callback({error: "Não conseguimos carregar os posts :("});
     };
 
     request.send();
+}
 
+function main() {
+    // TODO Implement pagination logic
+    // TODO Include descriptions to each post
+    var url = "https://www.gitcdn.xyz/repo/liberdade-organizacao/posts/master/index.json";
 
+    get(url, draw);
 }
