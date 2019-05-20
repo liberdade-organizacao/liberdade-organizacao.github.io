@@ -1,3 +1,7 @@
+#
+# JAVASCRIPT
+#
+
 # Logs
 logs
 *.log
@@ -78,3 +82,9 @@ typings/
 
 # DynamoDB Local files
 .dynamodb/
+
+#
+# STUFf
+#
+
+posts/
