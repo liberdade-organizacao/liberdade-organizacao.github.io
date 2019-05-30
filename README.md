@@ -1,3 +1,4 @@
 # Site da Liberdade
 
-Site em formato serverless. Feito para substituir versão no Heroku.
+Site em formato serverless. Os posts estão hospedados no
+[GitHub](https://github.com/liberdade-organizacao/posts).
