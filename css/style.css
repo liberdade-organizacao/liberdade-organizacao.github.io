@@ -30,11 +30,15 @@ a:visited {
 hr {
     border-color: #F18F01;
 }
+.content {
+    margin-bottom: -2em;
+}
 .l-content {
-    margin: 0 auto;
+    margin: 2em;
 }
 .l-box {
-    padding: 0.5em 2em;
+    padding: 0.5em 2em 0.5em -1em;
+    border: 1em;
 }
 .pure-menu {
     box-shadow: 0 1px 1px rgba(0,0,0, 0.10);
@@ -49,22 +53,20 @@ hr {
 .banner {
     background: url("https://raw.githubusercontent.com/liberdade-organizacao/tumblr/master/src/pde/bg/bg.png") repeat;
     background-color: #F18F01;
-    text-align: center;
-    height: 200px;
+    height: 40%;
     width: 100%;
-    margin-bottom: 3em;
-    display: table;
+    display: flex;
+    justify-content: center;
+    text-align: center;
 }
 .banner-head {
-    vertical-align: middle;
+    margin: auto;
     font-size: 2em;
     color: #dfe5e6;
     font-weight: 500;
     font-family: 'Pacifico', cursive;
     background-color: #090909;
-    margin-top: 15%;
-    margin-left: 25%;
-    margin-right: 25%;
+    width: 50%;
 }
 .information,
 .pricing-tables {
@@ -134,6 +136,7 @@ hr {
     background: #111;
     color: #dfe5e6;
     text-align: center;
+    padding: 2em;
 }
 .pure-button-primary {
     background-color: #F18F01;
