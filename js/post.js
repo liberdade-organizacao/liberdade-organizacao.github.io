@@ -14,8 +14,10 @@ function draw(box, post) {
     }
 
     box.innerHTML = `
-        <h2>${post.title}</h2>
-        ${body}
+        <div class="box">
+            <h2>${post.title}</h2>
+            ${body}
+        </div>
     `;
 }
 

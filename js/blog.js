@@ -12,7 +12,7 @@ function draw(posts) {
         var post = posts[i];
         var url = `/post.html?link=${encodeURI(post.link)}&title=${encodeURI(post.title)}`;
         outlet += `
-            <div class="l-box pure-u-1-2">
+            <div class="pure-u-1 pure-u-sm-1-2 box">
                 <h3 class="information-head">
                     <a href="${url}">
                         ${post.title}
