@@ -15,7 +15,6 @@ function draw(box, post) {
 
     box.innerHTML = `
         <div class="box">
-            <h2>${post.title}</h2>
             ${body}
         </div>
     `;
@@ -31,9 +30,9 @@ function main() {
         var content = document.getElementById('content');
 
         if (data.error) {
-            content.innerHTML = "<p>Erro inesperadp :(</p><p>Tente novamente mais tarde</p>";
+            content.innerHTML = "<p>Erro inesperado :(</p><p>Tente novamente mais tarde</p>";
         } else {
-            draw(content, {title: title, body: data, format: link.substr(-2)});
+            draw(content, {body: data, format: link.substr(-2)});
         }
     });
 }

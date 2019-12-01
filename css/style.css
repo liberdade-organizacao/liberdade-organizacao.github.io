@@ -5,10 +5,13 @@ body {
     background-color: #dfe5e6;
     font-family: 'Nunito', sans-serif;
 }
+h1 {
+    font-family: 'Pacifico', cursive;
+    text-decoration: underline;
+    text-decoration-color: #F18F01
+}
 h2,
 h3 {
-    font-weight: 600;
-    font-size: 1.5em;
     font-family: 'Pacifico', cursive;
 }
 p {
