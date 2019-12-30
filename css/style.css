@@ -68,6 +68,7 @@ hr {
     color: #dfe5e6;
     font-weight: 500;
     font-family: 'Pacifico', cursive;
+    text-decoration: none;
     background-color: #090909;
     width: 50%;
 }
