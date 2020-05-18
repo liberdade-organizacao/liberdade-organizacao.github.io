@@ -54,7 +54,7 @@ hr {
     text-transform: capitalize !important;
 }
 .banner {
-    background: url("https://raw.githubusercontent.com/liberdade-organizacao/tumblr/master/src/pde/bg/bg.png") repeat;
+    background: url(../img/bg.png) repeat;
     background-color: #F18F01;
     height: 15em;
     width: 100%;
