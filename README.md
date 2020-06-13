@@ -9,3 +9,4 @@ Este projeto é possível graças aos seguintes projetos open-source:
 - [Bulma](https://bulma.io/)
 - [reveal.js](https://revealjs.com)
 - [David Shim's qrcode.js](https://davidshimjs.github.io/qrcodejs/)
+- [Remarkable](https://github.com/jonschlinkert/remarkable)
