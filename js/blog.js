@@ -10,11 +10,11 @@ function draw(posts) {
 
     for (var i = 0; i < posts.length; i++) {
         var post = posts[i];
-        var url = `/post.html?link=${encodeURI(post.link)}&title=${encodeURI(post.title)}`;
+        var url = `./post.html?link=${encodeURI(post.link)}`;
         outlet += `
-            <div class="pure-u-1 pure-u-sm-1-2 box">
-                <h3 class="information-head">
-                    <a href="${url}">
+            <div class="box">
+                <h3 class="title">
+                    <a href="${url}" class="posts-title">
                         ${post.title}
                     </a>
                 </h3>

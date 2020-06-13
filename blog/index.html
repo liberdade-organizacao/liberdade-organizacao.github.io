@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Liberdade.</title>
+        <link rel="stylesheet" href="/css/vendor/bulma.min.css">
+            <link rel="stylesheet" href="/css/style.css">
+    </head>
+    <body>
+        <nav class="navbar" id="header">
+            <div class="navbar-brand">
+                <a class="navbar-item brand" href="/">
+                    Liberdade
+                </a>
+            </div>
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <a href="/blog">Blog</a>
+                </div>
+                <div class="navbar-item">
+                    <a href="/util">Utilidades</a>
+                </div>
+            </div>
+        </nav>
+
+        <section class="hero is-primary is-medium" id="splash">
+            <div class="hero-body">
+                <div class="container">
+                    <div class="title brand" id="splash-title">
+                        Liberdade.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="posts">
+            <!-- This gets filled with links on /js/blog.js -->
+        </section>
+
+        <footer class="footer">
+            <!-- TODO Complete this section -->
+            <div class="content has-text-centered">
+                <p>
+                    Liberdade 2017-2020
+                </p>
+                <p>
+                    GitHub
+                    crisjr.eng.br
+                    LinkedIn
+                </p>
+            </div>
+        </footer>
+
+        <script src="/js/github-blog.min.js"></script>
+        <script src="/js/blog.js" charset="utf-8"></script>
+        <script type="text/javascript">
+            function ready(fn) {
+                if (document.readyState != 'loading'){
+                    fn();
+                } else if (document.addEventListener) {
+                    document.addEventListener('DOMContentLoaded', fn);
+                } else {
+                    document.attachEvent('onreadystatechange', function() {
+                    if (document.readyState != 'loading')
+                        fn();
+                    });
+                }
+            }
+            ready(main);
+        </script>
+    </body>
+</html>

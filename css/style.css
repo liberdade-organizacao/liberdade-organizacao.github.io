@@ -20,6 +20,24 @@ body {
     font-family: var(--main-font);
 }
 
+.box {
+    box-shadow: none;
+    color: var(--black);
+}
+
+.posts-title {
+    color: var(--black);
+    text-decoration: underline;
+    text-decoration-color: var(--orange);
+}
+
+.posts-title:hover,
+.posts-title:visited {
+    color: var(--black);
+    text-decoration: underline;
+    text-decoration-color: var(--orange);
+}
+
 /*
  * NAVIGATION BAR
  */
