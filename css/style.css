@@ -1,173 +1,59 @@
 @import url( 'https://fonts.googleapis.com/css?family=Pacifico');
 @import url( 'https://fonts.googleapis.com/css?family=Nunito');
-body {
-    color: #090909;
-    background-color: #dfe5e6;
-    font-family: 'Nunito', sans-serif;
-}
-h1 {
-    font-family: 'Pacifico', cursive;
-    text-decoration: underline;
-    text-decoration-color: #F18F01
-}
-h2,
-h3 {
-    font-family: 'Pacifico', cursive;
-}
-p {
-    line-height: 1.6em;
-}
-i.fa {
-    color: #F18F01;
-}
-i.fo, .far {
-    color: #dfe5e6;
-}
-a:hover,
-a:link,
-a:visited {
-    color: #090909;
-    text-decoration-style: solid;
-    text-decoration-color: #F18F01;
-}
-hr {
-    border-color: #F18F01;
-}
-.content {
-    margin-bottom: -2em;
-}
-.l-content {
-    margin: 2em;
-}
-.l-box {
-    padding: 0.5em 2em 0.5em -1em;
-    border: 1em;
-}
-.pure-menu {
-    box-shadow: 0 1px 1px rgba(0,0,0, 0.10);
-}
-.pure-menu-link {
-    padding: 0.5em 0.7em;
-}
-.pure-menu-heading {
-    font-family: 'Pacifico', cursive;
-    text-transform: capitalize !important;
-}
-.banner {
-    background: url(../img/bg.png) repeat;
-    background-color: #F18F01;
-    height: 15em;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-}
-.banner-head {
-    margin: auto;
-    font-size: 2em;
-    color: #dfe5e6;
-    font-weight: 500;
-    font-family: 'Pacifico', cursive;
-    text-decoration: none;
-    background-color: #090909;
-    width: 50%;
-}
-.information,
-.pricing-tables {
-    max-width: 980px;
-    margin: 0 auto;
-}
-.pricing-tables {
-    margin-bottom: 3.125em;
-    text-align: center;
-}
-.pricing-table {
-    border: 1px solid #ddd;
-    margin: 0 0.5em 2em;
-    padding: 0 0 3em;
-}
-.pricing-table-free .pricing-table-header {
-    background: #F18F01;
-}
-.pricing-table-biz .pricing-table-header {
-    background: #F18F01;
-}
-.pricing-table-header {
-    background: #111;
-    color: #dfe5e6;
-}
-.pricing-table-header h2 {
-    margin: 0;
-    padding-top: 2em;
-    font-size: 1em;
-    font-weight: normal;
-}
-.pricing-table-price {
-    font-size: 4em;
-    margin: 0.2em 0 0;
-    font-weight: 100;
-}
-.pricing-table-price span {
-    display: block;
-    text-transform: uppercase;
-    font-size: 0.2em;
-    padding-bottom: 2em;
-    font-weight: 400;
-}
-.pricing-table-list {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-}
-.pricing-table-list li {
-    padding: 0.8em 0;
-    background: #f7f7f7;
-    border-bottom: 1px solid #e7e7e7;
-}
-.button-choose {
-    border: 0;
-    background: #fff;
-    border-radius: 2em;
-    font-weight: bold;
-    position: relative;
-    bottom: -1.5em;
-}
-.information-head {
-    font-weight: 500;
-}
-.footer {
-    background: #111;
-    color: #dfe5e6;
-    text-align: center;
-    padding: 2em;
-}
-.pure-button-primary {
-    background-color: #F18F01;
-}
-@media(min-width: 767px) {
-    .banner-head {
-        font-size: 4em;
-    }
-    .pricing-table {
-        margin-bottom: 0;
-    }
-}
-@media (min-width: 480px) {
-    .banner {
-        height: 400px;
-    }
-    .banner-head {
-        font-size: 3em;
-    }
+
+:root {
+    --black: #090909;
+    --background-grey: #dfe5e6;
+    --orange: #F18F01;
+    --white: #f7f7f7;
+    --main-font: 'Nunito', sans-serif;
+    --decorative-font: 'Pacifico', cursive;
 }
 
-table {
-    .pure-table;
+/*
+ * BODY
+ */
+
+body {
+    background-color: var(--background-grey);
+    color: var(--black);
+    font-family: var(--main-font);
 }
-.box {
-    background-color: #f7f7f7;
-    border-bottom: 1px solid #e7e7e7;
-    margin: 0.5em;
-    padding: 0.5em;
+
+/*
+ * NAVIGATION BAR
+ */
+
+#header {
+    background-color: var(--black);
+    color: var(--white);
+}
+
+.brand {
+    font-family: var(--decorative-font);
+    color: var(--white);
+}
+
+/*
+ * HERO
+ */
+
+#splash {
+    background: url(/img/bg.png);
+    text-align: center;
+}
+
+#splash-title {
+    color: var(--white);
+    background-color: var(--black);
+    /* TODO improve title box proportions */
+}
+
+/*
+ * FOOTER
+ */
+
+.footer {
+    background-color: var(--black);
+    color: var(--white);
 }
