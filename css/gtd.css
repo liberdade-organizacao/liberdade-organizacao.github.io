@@ -189,3 +189,12 @@ body {
       background-color: white;
       font-family: "Pacifico", cursive;
   }
+
+#qrcode {
+    display: inline-block;
+}
+
+img {
+    border: none !important;
+    box-shadow: none !important;
+}

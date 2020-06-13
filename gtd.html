@@ -19,7 +19,7 @@
 
                 <section>
                     <p>Acompanhe a apresentação:</p>
-                    <img src="../img/gtd-qr-code.gif" alt="http://liberdade-organizacao.github.io/gtd.html">
+                    <div id="qrcode"></div>
                     <p>http://liberdade-organizacao.github.io/gtd.html</p>
                 </section>
 
@@ -37,7 +37,10 @@
                         <h2>Contextualização</h2>
                     </section>
                     <section>
-                        <img src="https://raw.githubusercontent.com/ishiikurisu/ishiikurisu.github.io/master/assets/img/cartesian.jpg" alt="Obrigado!">
+                        <img src="/img/cartesian.jpg">
+                        <p>
+                           Impacto × Efetividade
+                       </p>
                     </section>
                     <section>
                         <h2>O trabalho pode ser classificado de três formas:</h2>
@@ -75,7 +78,6 @@
                         <p><i class="fa fa-check" aria-hidden="true"></i>Engajar</p>
                     </section>
 
-                    <!-- TODO Add relevant subsections here -->
                     <section>
                         <h3>Capturar</h3>
                         <p>Tirar da cabeça e colocar em uma caixa de entrada.</p>
@@ -190,7 +192,7 @@
                 </section>
 
                 <section>
-                    <img src="https://raw.githubusercontent.com/ishiikurisu/ishiikurisu.github.io/master/assets/img/steelers.gif" alt="Obrigado!">
+                    <img src="/img/steelers.gif" alt="Obrigado!">
                     <h2>Obrigado!</h2>
                     <p><i class="fa fa-check" aria-hidden="true"></i>
                         <a href="http://www.crisjr.eng.br">Site do Cris</a>
@@ -203,8 +205,10 @@
 		</div>
 
         <script src="/js/vendor/reveal.js" charset="utf-8"></script>
+        <script src="/js/vendor/qrcode.min.js" charset="utf-8"></script>
         <script charset="utf-8" type="text/javascript">
             Reveal.initialize();
+            new QRCode(document.getElementById("qrcode"), "https://liberdade-organizacao.github.io/gtd.html");
         </script>
     </body>
 </html>
