@@ -94,3 +94,13 @@ body {
     background-color: var(--black);
     color: var(--white);
 }
+
+.footer-link {
+    font-size: 1.5em;
+    color: var(--white);
+}
+
+.footer-link:visited,
+.footer-link:hover {
+    color: var(--white);
+}
