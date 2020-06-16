@@ -25,6 +25,10 @@ body {
     color: var(--black);
 }
 
+.tile {
+    padding: 1em;
+}
+
 .posts-title {
     color: var(--black);
     text-decoration: underline;
@@ -66,7 +70,10 @@ body {
 #splash-title {
     color: var(--white);
     background-color: var(--black);
-    /* TODO improve title box proportions */
+    padding: 0.5em;
+    margin-left: 3em;
+    margin-right: 3em;
+    font-size: 5em;
 }
 
 /*
