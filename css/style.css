@@ -58,6 +58,16 @@ body {
     color: var(--white);
 }
 
+.header-link {
+    color: var(--white);
+}
+
+.header-link:visited,
+.header-link:hover {
+    color: var(--white);
+    background:
+}
+
 /*
  * HERO
  */
