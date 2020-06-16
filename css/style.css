@@ -58,14 +58,21 @@ body {
     color: var(--white);
 }
 
+a.brand:visited,
+a.brand:hover {
+    font-family: var(--decorative-font);
+    color: var(--white);
+}
+
 .header-link {
     color: var(--white);
+    text-decoration: none;
 }
 
 .header-link:visited,
 .header-link:hover {
     color: var(--white);
-    background:
+    text-decoration: underline;
 }
 
 /*
@@ -103,4 +110,24 @@ body {
 .footer-link:visited,
 .footer-link:hover {
     color: var(--white);
+}
+
+/*
+ * MAIN PAGE SPECIFICS
+ */
+
+.hero.is-info {
+    background-color: var(--white);
+}
+
+.hero.is-info .title,
+.hero.is-info .subtitle,
+.hero.is-info .subtitle a:not(.button),
+.hero.is-info .subtitle strong {
+    color: var(--black);
+}
+
+.email-link {
+    text-decoration: underline;
+    text-decoration-color: var(--orange);
 }
