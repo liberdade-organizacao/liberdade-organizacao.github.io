@@ -3,24 +3,26 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Treinamento de organização pessoal da Liberdade">
+        <meta name="description" content="Personal website for Cristiano Silva Jr.">
         <title>Organização Pessoal</title>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-        <link rel="stylesheet" href="/css/vendor/reveal.css">
-        <link href="/css/gtd.css" rel="stylesheet">
-        <link rel="shortcut icon" href="../img/logo.png">
+        <link rel="stylesheet" href="./css/reveal.css">
+        <link rel="icon" href="https://raw.githubusercontent.com/ishiikurisu/ishiikurisu.github.io/master/assets/logo.png">
+        <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
+        <link href="./css/gtd.css" rel="stylesheet">
     </head>
     <body>
         <div class="reveal">
 			<div class="slides">
                 <section class="splash">
                     <h2>Gestão de tempo</h2>
+                    <p>Cristiano Silva Jr.</p>
                 </section>
 
                 <section>
                     <p>Acompanhe a apresentação:</p>
                     <div id="qrcode"></div>
-                    <p>http://liberdade-organizacao.github.io/util/gtd</p>
+                    <p id="url"></p>
                 </section>
 
                 <section>
@@ -37,10 +39,10 @@
                         <h2>Contextualização</h2>
                     </section>
                     <section>
-                        <img src="/img/cartesian.jpg">
+                        <img src="./img/cartesian.jpg" alt="Natureza do trabalho">
                         <p>
-                           Impacto × Efetividade
-                       </p>
+                            Impacto × Efetividade
+                        </p>
                     </section>
                     <section>
                         <h2>O trabalho pode ser classificado de três formas:</h2>
@@ -192,23 +194,18 @@
                 </section>
 
                 <section>
-                    <img src="/img/steelers.gif" alt="Obrigado!">
+                    <img src="./img/steelers.gif" alt="Obrigado!">
                     <h2>Obrigado!</h2>
-                    <p><i class="fa fa-check" aria-hidden="true"></i>
-                        <a href="http://www.crisjr.eng.br">Site do Cris</a>
-                    </p>
-                    <p><i class="fa fa-check" aria-hidden="true"></i>
-                        <a href="mailto:liberdadeorganizacao@gmail.com">liberdadeorganizacao@gmail.com</a>
-                    </p>
                 </section>
 			</div>
 		</div>
 
-        <script src="/js/vendor/reveal.js" charset="utf-8"></script>
-        <script src="/js/vendor/qrcode.min.js" charset="utf-8"></script>
+        <script src="./js/qrcode.min.js" charset="utf-8"></script>
+        <script src="./js/reveal.min.js" charset="utf-8"></script>
         <script charset="utf-8" type="text/javascript">
             Reveal.initialize();
-            new QRCode(document.getElementById("qrcode"), "https://liberdade-organizacao.github.io/util/gtd");
+            new QRCode(document.getElementById("qrcode"), window.location.href);
+            document.getElementById('url').innerHTML = window.location.href;
         </script>
     </body>
 </html>
