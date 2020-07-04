@@ -131,3 +131,22 @@ a.brand:hover {
     text-decoration: underline;
     text-decoration-color: var(--orange);
 }
+
+/*
+ * POST SPECIFICS
+ */
+article h1,
+article h2,
+article h3,
+article a {
+    text-decoration: underline;
+    text-decoration-color: var(--orange);
+    color: var(--black);
+}
+
+article a:visited,
+article a:hover {
+    color: var(--black);
+    text-decoration: underline;
+    text-decoration-color: var(--orange);
+}
