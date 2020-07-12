@@ -69,6 +69,27 @@
                     </div>
                 </div>
             </div>
+            <div class="tile is-ancestor">
+                <div class="tile is-6">
+                    <div class="tile is-child box">
+                        <p class="title">
+                            <i class="fas fa-toolbox"></i>
+                            Informaçōes sobre o navegador
+                        </p>
+                        <p class="subtitle">
+                            Para auxiliar durante o desenvolvimento
+                        </p>
+                        <div class="content">
+                            <p>
+                                Dimensōes da tela:
+                                <span id="screenwidth"></span>px de largura e
+                                <span id="screenheight"></span>px de altura
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </section>
 
         <footer class="footer">
@@ -89,5 +110,12 @@
                 </p>
             </div>
         </footer>
+
+        <script type="text/javascript">
+            window.setInterval(function() {
+                document.getElementById('screenwidth').innerHTML = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+                document.getElementById('screenheight').innerHTML = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+            }, 1000);
+        </script>
     </body>
 </html>
