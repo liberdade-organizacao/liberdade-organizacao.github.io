@@ -46,6 +46,7 @@ a {
 #layout, #nav, #list, #main {
     margin: 0;
     padding: 0;
+    width: auto;
 }
 
 /* Make the navigation 100% width on phones */
@@ -287,10 +288,32 @@ a {
     outline: 0;
     background: transparent;
     border-bottom: 1px solid #ddd;
+    width: 90%;
+}
+
+.editable {
+    display: flex;
+    flex-grow: 100;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-bottom: 1px solid #ddd;
 }
 
 .editchecklist {
     height: 30em;
     width: 20em;
     font-family: monospace;
+}
+
+.block-item {
+    display: flex;
+    margin-bottom: 1em;
+    margin-left: 0;
+}
+
+.block-todo-item {
+    align-self: flex-start;
+    margin-top: 5px;
+    margin-right: 5px;
 }

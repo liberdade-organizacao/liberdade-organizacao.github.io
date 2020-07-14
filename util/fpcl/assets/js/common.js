@@ -26,9 +26,11 @@ function createDummyChecklist() {
         "title": "Your first checklist",
         "items": [
             {
+                "kind": "todo",
                 "title": "To do item",
                 "done": false
             }, {
+                "kind": "todo",
                 "title": "Done item",
                 "done": true
             }

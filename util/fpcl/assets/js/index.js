@@ -13,13 +13,13 @@
 function generateChecklistCard(checklists, i) {
     var checklist = checklists[i];
     return `
-    <div class="email-item pure-g" onclick="displayChecklist(` + i + `)" id="checklist-` + i + `">
+    <div class="email-item pure-g" onclick="displayChecklist(${i})" id="checklist-${i}">
         <div class="pure-u">
             <img width="64" height="64" alt="Checklist" class="email-avatar" src="https://via.placeholder.com/64/FFCD8A/000000/?text=Checklist">
         </div>
 
         <div class="pure-u-3-4">
-            <h5 class="email-name">` + checklist.title + `</h5>
+            <h5 class="email-name">${checklist.title}</h5>
             <p class="email-desc">
                 <i class="fa fa-trash" aria-hidden="true" onclick="deleteChecklistCallback(${i})"></i>
             </p>
@@ -62,11 +62,15 @@ function generateTodoItem(item, index, i) {
     var checked = (item.done)? "checked" : "";
 
     return `
-        <p>
-            <input type="checkbox" id="${checkboxId}" name="checkbox" value="${checkboxId}" ${checked}>
-            <input type="text" name="block-text" id="label-${checkboxId}" class="textboxLabel editable-title" for="${checkboxId}" value="${item.title}">
+        <div class="block-item">
+            <input type="checkbox" class="block-todo-item" id="${checkboxId}" name="checkbox" value="${checkboxId}" ${checked}>
+            <div id="label-${textId}"
+                 class="editable"
+                 contentEditable="true"
+                 name="block-text"
+                 for="${checkboxId}">${item.title}</div>
             ${generateTrashIcon(index, i)}
-        </p>
+        </div>
     `;
 }
 
@@ -80,10 +84,13 @@ function generateTodoItem(item, index, i) {
 function generateNoteItem(item, index, i) {
     var noteId = `note-${index}-${i}`;
     return `
-        <p>
-            <input type="text" name="block-text" id="label-${noteId}" class="textboxLabel editable-title" value="${item.title}">
+      	<div class="block-item">
+            <div id="label-${noteId}"
+                 class="editable"
+                 contentEditable="true"
+                 name="block-text">${item.title}</div>
             ${generateTrashIcon(index, i)}
-        </p>
+        </div>
     `;
 }
 
@@ -104,6 +111,7 @@ function generateChecklistContent(checklists, index) {
     }
 
     // TODO move items around
+    // TODO delete checklists
     for (var i = 0; i < checklist.items.length; i++) {
         var item = checklist.items[i];
         var itemBody = generatorsByKind[item.kind](item, index, i);
@@ -113,21 +121,23 @@ function generateChecklistContent(checklists, index) {
     return `
     <div class="email-content">
         <div class="email-content-header pure-g">
-            <div class="pure-u-1-2">
+            <div class="pure-u-4-5">
                 <input type="text" class="editable-title somehow-big email-content-title" value="${checklist.title}">
             </div>
 
-            <div class="email-content-controls pure-u-1-2">
+            <div class="email-content-controls pure-u-1-5">
                 <button class="secondary-button pure-button" onclick="saveCallback(${index})">Save</button>
             </div>
         </div>
 
         <div class="email-content-body">
-            ${checklistBody}
-            <p>
-                <button class="secondary-button pure-button" onclick="addItemCallback(${index})">New note</button>
-                <button class="secondary-button pure-button" onclick="addTaskCallback(${index})">New task</button>
-            </p>
+	    <ul>
+            	${checklistBody}
+	    </ul>
+        <p>
+            <button class="secondary-button pure-button" onclick="addItemCallback(${index})">New note</button>
+            <button class="secondary-button pure-button" onclick="addTaskCallback(${index})">New task</button>
+        </p>
         </div>
     </div>`;
 }
@@ -152,14 +162,15 @@ function readChecklist() {
 
     for (var i = 0; i < blocks.length; i++) {
         var block = blocks[i];
-        var checkbox = document.getElementById(block.getAttribute('for'));
+        var checkboxId = block.getAttribute("for");
+        
         var item = {
-            kind: (!checkbox)? 'note' : 'todo',
-            title: block.value
+            kind: (!!checkboxId)? 'todo' : 'note',
+            title: block.textContent
         };
 
-        if (!!checkbox) {
-            item.done = checkbox.checked;
+        if (!!checkboxId) {
+            item.done = document.getElementById(checkboxId).checked;
         }
 
         items.push(item);
