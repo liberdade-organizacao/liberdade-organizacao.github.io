@@ -131,9 +131,7 @@ function generateChecklistContent(checklists, index) {
         </div>
 
         <div class="email-content-body">
-	    <ul>
-            	${checklistBody}
-	    </ul>
+	    ${checklistBody}
         <p>
             <button class="secondary-button pure-button" onclick="addItemCallback(${index})">New note</button>
             <button class="secondary-button pure-button" onclick="addTaskCallback(${index})">New task</button>

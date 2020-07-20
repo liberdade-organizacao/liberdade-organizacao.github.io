@@ -47,6 +47,11 @@ a {
     margin: 0;
     padding: 0;
     width: auto;
+    overflow: hidden;
+}
+
+#list {
+    width: 100%;
 }
 
 /* Make the navigation 100% width on phones */
@@ -138,6 +143,8 @@ a {
     padding: 0.9em 1em;
     border-bottom: 1px solid #ddd;
     border-left: 6px solid transparent;
+    flex-grow: 1;
+    flex-shrink: 0;
 }
     .email-avatar {
         border-radius: 3px;
