@@ -19,7 +19,7 @@ function generateChecklistCard(checklists, i) {
         </div>
 
         <div class="pure-u-3-4">
-            <h5 class="email-name">${checklist.title}</h5>
+            <h5 class="email-name">${decodeURIComponent(checklist.title)}</h5>
             <p class="email-desc">
                 <i class="fa fa-trash" aria-hidden="true" onclick="deleteChecklistCallback(${i})"></i>
             </p>
@@ -68,7 +68,7 @@ function generateTodoItem(item, index, i) {
                  class="editable"
                  contentEditable="true"
                  name="block-text"
-                 for="${checkboxId}">${item.title}</div>
+                 for="${checkboxId}">${decodeURIComponent(item.title)}</div>
             ${generateTrashIcon(index, i)}
         </div>
     `;
@@ -88,7 +88,7 @@ function generateNoteItem(item, index, i) {
             <div id="label-${noteId}"
                  class="editable"
                  contentEditable="true"
-                 name="block-text">${item.title}</div>
+                 name="block-text">${decodeURIComponent(item.title)}</div>
             ${generateTrashIcon(index, i)}
         </div>
     `;
@@ -122,7 +122,7 @@ function generateChecklistContent(checklists, index) {
     <div class="email-content">
         <div class="email-content-header pure-g">
             <div class="pure-u-4-5">
-                <input type="text" class="editable-title somehow-big email-content-title" value="${checklist.title}">
+                <input type="text" class="editable-title somehow-big email-content-title" value="${decodeURIComponent(checklist.title)}">
             </div>
 
             <div class="email-content-controls pure-u-1-5">
@@ -164,7 +164,7 @@ function readChecklist() {
         
         var item = {
             kind: (!!checkboxId)? 'todo' : 'note',
-            title: block.textContent
+            title: encodeURIComponent(block.textContent)
         };
 
         if (!!checkboxId) {
@@ -175,7 +175,7 @@ function readChecklist() {
     }
 
     return {
-        "title": document.getElementsByClassName('email-content-title')[0].value,
+        "title": encodeURIComponent(document.getElementsByClassName('email-content-title')[0].value),
         "items": items
     };
 }

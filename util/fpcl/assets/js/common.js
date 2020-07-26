@@ -64,16 +64,16 @@ function checklistsToFpcl(checklists) {
     for (var i = 0; i < checklists.length; i++) {
         var checklist = checklists[i];
         var items = checklist.items;
-        var box = `# ${checklist.title}\n\n`;
+        var box = `# ${decodeURIComponent(checklist.title)}\n\n`;
         for (var j = 0; j < items.length; j++) {
             var item = items[j];
             switch (item.kind) {
                 case "note":
-                    box += `${item.title}\n`;
+                    box += `${decodeURIComponent(item.title)}\n`;
                     break;
                 case "todo":
                     var checked = `- [${(item.done)? "x" : " "}] `;
-                    box += `${checked}${item.title}\n`;
+                    box += `${checked}${decodeURIComponent(item.title)}\n`;
                     break;
 
             }
@@ -135,7 +135,7 @@ function fpclToChecklists(md) {
                 }
 
                 currentChecklist = {
-                    'title': line.substring(1).trim(),
+                    'title': encodeURIComponent(line.substring(1).trim()),
                     'items': []
                 };
                 break;
@@ -143,7 +143,7 @@ function fpclToChecklists(md) {
             case 'todo':
                 currentChecklist.items.push({
                     'kind': 'todo',
-                    'title': line.substring('- [ ]'.length).trim(),
+                    'title': encodeURIComponent(line.substring('- [ ]'.length).trim()),
                     'done': !!line.match(/^- \[x\]/)
                 });
                 break;
@@ -151,7 +151,7 @@ function fpclToChecklists(md) {
             case 'note':
                 currentChecklist.items.push({
                     'kind': 'note',
-                    'title': line.trim()
+                    'title': encodeURIComponent(line.trim())
                 });
                 break;
 

@@ -30,22 +30,21 @@ describe('FPCL Convertion', function() {
 `
             var expectedChecklists = [
                 {
-                    "title": "Your first checklist",
+                    "title": encodeURIComponent("Your first checklist"),
                     "items": [
                         {
                             "kind": "todo",
-                            "title": "Something to do",
+                            "title": encodeURIComponent("Something to do"),
                             "done": false
                         }, {
                             "kind": "todo",
-                            "title": "Done item",
+                            "title": encodeURIComponent("Done item"),
                             "done": true
                         }
                     ]
                 }
             ]
             var resultingChecklists = fpclToChecklists(fpcl);
-            console.log(resultingChecklists);
             assertEqualFpcl(expectedChecklists, resultingChecklists);
         });
 
@@ -62,28 +61,28 @@ describe('FPCL Convertion', function() {
 `
             var expectedChecklists = [
                 {
-                    "title": "Your first checklist",
+                    "title": encodeURIComponent("Your first checklist"),
                     "items": [
                         {
                             "kind": "todo",
-                            "title": "Something to do",
+                            "title": encodeURIComponent("Something to do"),
                             "done": false
                         }, {
                             "kind": "todo",
-                            "title": "Done item",
+                            "title": encodeURIComponent("Done item"),
                             "done": true
                         }
                     ]
                 }, {
-                    "title": "Another checklist",
+                    "title": encodeURIComponent("Another checklist"),
                     "items": [
                         {
                             "kind": "todo",
-                            "title": "done stuff",
+                            "title": encodeURIComponent("done stuff"),
                             "done": true
                         }, {
                             "kind": "todo",
-                            "title": "I am the king of stuff",
+                            "title": encodeURIComponent("I am the king of stuff"),
                             "done": true
                         }
                     ]
@@ -107,27 +106,27 @@ describe('FPCL Convertion', function() {
 `
             var expectedChecklists = [
                 {
-                    "title": "Your first checklist",
+                    "title": encodeURIComponent("Your first checklist"),
                     "items": [
                         {
                             "kind": "todo",
-                            "title": "Something to do",
+                            "title":encodeURIComponent("Something to do"),
                             "done": false
                         }, {
                             "kind": "todo",
-                            "title": "Done item",
+                            "title":encodeURIComponent("Done item"),
                             "done": true
                         }
                     ]
                 }, {
-                    "title": "Empty Checklist",
+                    "title":encodeURIComponent("Empty Checklist"),
                     "items": []
                 }, {
-                    "title": "Not empty checklist",
+                    "title":encodeURIComponent("Not empty checklist"),
                     "items": [
                         {
                             "kind": "todo",
-                            "title": "to do",
+                            "title":encodeURIComponent("to do"),
                             "done": false
                         }
                     ]
@@ -152,29 +151,29 @@ describe('FPCL Convertion', function() {
 `
             var expectedChecklists = [
                 {
-                    "title": "Your first checklist",
+                    "title": encodeURIComponent("Your first checklist"),
                     "items": [
                         {
                             "kind": "todo",
-                            "title": "Something to do",
+                            "title": encodeURIComponent("Something to do"),
                             "done": false
                         }, {
                             "kind": "todo",
-                            "title": "Done item",
+                            "title": encodeURIComponent("Done item"),
                             "done": true
                         }
                     ]
                 }, {
-                    "title": "Not empty checklist",
+                    "title": encodeURIComponent("Not empty checklist"),
                     "items": [
                         {
                             "kind": "todo",
-                            "title": "to do",
+                            "title": encodeURIComponent("to do"),
                             "done": false
                         }
                     ]
                 }, {
-                    "title": "Empty Checklist",
+                    "title": encodeURIComponent("Empty Checklist"),
                     "items": []
                 }
             ]
@@ -199,34 +198,34 @@ with two lines of notes.
 `
             var expectedLists = [
                 {
-                    "title": "Your first checklist",
+                    "title": encodeURIComponent("Your first checklist"),
                     "items": [
                         {
                             "kind": "todo",
-                            "title": "Something to do",
+                            "title": encodeURIComponent("Something to do"),
                             "done": false
                         }, {
                             "kind": "todo",
-                            "title": "Done item",
+                            "title": encodeURIComponent("Done item"),
                             "done": true
                         }, {
                             "kind": "note",
-                            "title": "FPCL's first note"
+                            "title": encodeURIComponent("FPCL's first note")
                         }
                     ]
                 }, {
-                    "title": "Note only checklist",
+                    "title": encodeURIComponent("Note only checklist"),
                     "items": [
                         {
                             "kind": "note",
-                            "title": "This checklist contains a note only,"
+                            "title": encodeURIComponent("This checklist contains a note only,")
                         }, {
                             "kind": "note",
-                            "title": "with two lines of notes."
+                            "title": encodeURIComponent("with two lines of notes.")
                         }
                     ]
                 }, {
-                    "title": "Empty Checklist",
+                    "title": encodeURIComponent("Empty Checklist"),
                     "items": []
                 }
             ]
