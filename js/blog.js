@@ -1,11 +1,4 @@
-function draw(posts) {
-    // checking for errors
-    if (posts.error !== undefined) {
-        alert(posts.error);
-        return;
-    }
-
-    // drawing posts
+function listPosts(posts, filter) {
     var outlet = "";
 
     for (var i = 0; i < posts.length; i++) {
@@ -25,10 +18,38 @@ function draw(posts) {
         `;
     }
 
-    document.getElementById('posts').innerHTML = outlet;
+    document.getElementById('listing').innerHTML = outlet;
+}
+
+function draw(posts) {
+    if (posts.error !== undefined) {
+        alert(posts.error);
+        return;
+    }
+
+    document.getElementById('posts').innerHTML = `
+        <div class="box">
+            <!-- <i class="fas fa-search"></i> -->
+            <input class="input is-rounded" type="text" placeholder="Filtrar" id="filter">
+        </div>
+        <div id="listing">
+        </div>
+    `;
+
+    document.querySelector('#filter').addEventListener('change', function() {
+        // TODO draw index depending on search bar state
+        listPosts(posts, function(p) {
+            return false;
+        });
+    });
+
+    listPosts(posts, function(p) {
+        return true;
+    });
 }
 
 function main() {
     var blog = new GithubBlog('liberdade-organizacao/posts');
+    // TODO store index on memory instead of drawing directly
     blog.loadIndex(draw);
 }

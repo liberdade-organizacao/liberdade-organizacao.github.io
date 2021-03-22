@@ -150,3 +150,7 @@ article a:hover {
     text-decoration: underline;
     text-decoration-color: var(--orange);
 }
+
+#filter {
+    width: 80%;
+}
