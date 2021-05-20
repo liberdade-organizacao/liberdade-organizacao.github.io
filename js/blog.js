@@ -3,22 +3,36 @@ function listPosts(posts, filter) {
 
     for (var i = 0; i < posts.length; i++) {
         var post = posts[i];
-        var url = `./post.html?link=${encodeURI(post.link)}`;
-        outlet += `
-            <div class="box">
-                <h3 class="title">
-                    <a href="${url}" class="posts-title">
-                        ${post.title}
-                    </a>
-                </h3>
-                <p>
-                    ${post.description}
-                </p>
-            </div>
-        `;
+
+        if (filter(post)) {
+            var url = `./post.html?link=${encodeURI(post.link)}`;
+            outlet += `
+                <div class="box">
+                    <h3 class="title">
+                        <a href="${url}" class="posts-title">
+                            ${post.title}
+                        </a>
+                    </h3>
+                    <p>
+                        ${post.description}
+                    </p>
+                </div>
+            `;
+        }
     }
 
     document.getElementById('listing').innerHTML = outlet;
+}
+
+function generatePostFilter(query) {
+    return post => {
+        let conditions = [
+            !query,
+            post.title.toLowerCase().includes(query),
+            post.description.toLowerCase().includes(query)
+        ];
+        return conditions.some(condition => !!condition);
+    };
 }
 
 function draw(posts) {
@@ -37,10 +51,7 @@ function draw(posts) {
     `;
 
     document.querySelector('#filter').addEventListener('change', function() {
-        // TODO draw index depending on search bar state
-        listPosts(posts, function(p) {
-            return false;
-        });
+        listPosts(posts, generatePostFilter(document.querySelector('#filter').value.toLowerCase()));
     });
 
     listPosts(posts, function(p) {
