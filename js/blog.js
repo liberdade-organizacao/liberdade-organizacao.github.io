@@ -1,10 +1,12 @@
 function listPosts(posts, filter) {
     var outlet = "";
+    var foundPost = false;
 
     for (var i = 0; i < posts.length; i++) {
         var post = posts[i];
 
         if (filter(post)) {
+            foundPost = true;
             var url = `./post.html?link=${encodeURI(post.link)}`;
             outlet += `
                 <div class="box">
@@ -19,6 +21,19 @@ function listPosts(posts, filter) {
                 </div>
             `;
         }
+    }
+
+    if (!foundPost) {
+        outlet = `
+            <div class="box">
+                <h3 class="title">
+                    Oops!
+                </h3>
+                <p>
+                    Nenhum post foi encontrado com este termo.
+                </p>
+            </div>
+        `;
     }
 
     document.getElementById('listing').innerHTML = outlet;
