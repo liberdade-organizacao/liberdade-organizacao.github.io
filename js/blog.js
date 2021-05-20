@@ -50,6 +50,8 @@ function draw(posts) {
 
 function main() {
     var blog = new GithubBlog('liberdade-organizacao/posts');
-    // TODO store index on memory instead of drawing directly
-    blog.loadIndex(draw);
+    blog.loadIndex(function(posts) {
+        localStorage.setItem("blog", JSON.stringify(posts));
+        draw(JSON.parse(localStorage.getItem("blog")));
+    });
 }
