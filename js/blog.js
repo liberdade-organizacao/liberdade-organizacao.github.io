@@ -43,16 +43,19 @@ function draw(posts) {
 
     document.getElementById('posts').innerHTML = `
         <div class="box">
-            <!-- <i class="fas fa-search"></i> -->
-            <input class="input is-rounded" type="text" placeholder="Filtrar" id="filter">
+            <input class="input is-rounded" type="text" placeholder="Filtrar" id="filter"></input>
+            <button class="button is-rounded" id="search-button"><i class="fas fa-search"></i></button>
         </div>
         <div id="listing">
         </div>
     `;
 
-    document.querySelector('#filter').addEventListener('change', function() {
+    var searchCallback = function() {
         listPosts(posts, generatePostFilter(document.querySelector('#filter').value.toLowerCase()));
-    });
+    };
+
+    document.querySelector('#filter').addEventListener('change', searchCallback);
+    document.querySelector('#search-button').addEventListener('click', searchCallback);
 
     listPosts(posts, function(p) {
         return true;
